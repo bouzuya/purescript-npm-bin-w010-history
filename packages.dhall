@@ -119,6 +119,6 @@ let bouzuya =
 
 let overrides = {=}
 
-let additions = {=} // bouzuya
+let additions = {=} ⫽ bouzuya
 
 in  upstream ⫽ overrides ⫽ additions
