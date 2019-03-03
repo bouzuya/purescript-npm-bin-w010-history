@@ -8,6 +8,7 @@ You can edit this file as you like.
     [ "bouzuya-command-line-option-parser"
     , "console"
     , "effect"
+    , "node-process"
     , "psci-support"
     , "test-unit"
     ]
