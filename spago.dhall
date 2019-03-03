@@ -5,7 +5,12 @@ You can edit this file as you like.
 { name =
     "my-project"
 , dependencies =
-    [ "console", "effect", "psci-support", "test-unit" ]
+    [ "bouzuya-command-line-option-parser"
+    , "console"
+    , "effect"
+    , "psci-support"
+    , "test-unit"
+    ]
 , packages =
     ./packages.dhall
 }
