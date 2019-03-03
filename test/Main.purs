@@ -7,6 +7,7 @@ import Effect.Console (log)
 import Main as Main
 import Test.Options as Options
 import Test.Stream as Stream
+import Test.TemplateString as TemplateString
 import Test.Unit.Main as TestUnitMain
 
 main :: Effect Unit
@@ -16,3 +17,4 @@ main = do
   TestUnitMain.runTest do
     Options.tests
     Stream.tests
+    TemplateString.tests
