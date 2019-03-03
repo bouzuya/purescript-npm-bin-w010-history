@@ -3,7 +3,6 @@ module Main
   ) where
 
 import Data.Array as Array
-import Data.Maybe (Maybe)
 import Data.Maybe as Maybe
 import Effect (Effect)
 import Effect.Aff as Aff
@@ -13,19 +12,8 @@ import Effect.Exception as Exception
 import Node.Process as Process
 import Options as Options
 import Prelude (Unit, bind, pure, (<$>))
-import Simple.JSON as SimpleJSON
 import Stream as Stream
-
-type W010History =
-  { mockmockDevNo :: Int
-  , mockmockDevUrl :: String
-  , note :: String
-  , beginThreadUrl :: String
-  , endThreadUrl :: String
-  , repositoryFullName :: String
-  , date010 :: Maybe String
-  , date100 :: Maybe String
-  }
+import W010History as W010History
 
 main :: Effect Unit
 main = do
@@ -44,5 +32,5 @@ main = do
           (Maybe.maybe
             (Exception.throw "invalid json")
             pure
-            (SimpleJSON.readJSON_ input :: _ (Array W010History)))
-      Console.logShow json
+            (W010History.parse input))
+      Console.log (W010History.format json)
