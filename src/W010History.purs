@@ -4,6 +4,7 @@ module W010History
   , parse
   ) where
 
+import Bouzuya.TemplateString as TemplateString
 import Data.Array as Array
 import Data.Maybe (Maybe)
 import Data.Maybe as Maybe
@@ -13,7 +14,6 @@ import Foreign.Object (Object)
 import Foreign.Object as Object
 import Prelude (map, mempty, show, (<<<), (<>))
 import Simple.JSON as SimpleJSON
-import TemplateString as TemplateString
 
 type W010History =
   { mockmockDevNo :: Int
