@@ -10,6 +10,7 @@ You can edit this file as you like.
     , "effect"
     , "node-process"
     , "psci-support"
+    , "simple-json"
     , "test-unit"
     ]
 , packages =
