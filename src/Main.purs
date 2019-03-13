@@ -24,7 +24,7 @@ main = do
       pure
       (Options.parse args)
   if options.help
-    then Console.log "HELP"
+    then Console.log Options.help
     else Aff.launchAff_ do
       input <- Stream.readString Process.stdin
       json <-
