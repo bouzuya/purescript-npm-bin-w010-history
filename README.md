@@ -1,5 +1,7 @@
 # @bouzuya/w010-history
 
+**Use [`dhall-to-text`](https://github.com/dhall-lang/dhall-haskell/blob/1.21.0/dhall-text/README.md)**
+
 [bouzuya/w010][] apps.
 
 [bouzuya/w010]: https://github.com/bouzuya/w010
