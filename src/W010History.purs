@@ -16,7 +16,8 @@ import Prelude (map, mempty, show, (<<<), (<>))
 import Simple.JSON as SimpleJSON
 
 type W010History =
-  { mockmockDevNo :: Int
+  { yearWeek :: String
+  , mockmockDevNo :: Int
   , mockmockDevUrl :: String
   , note :: String
   , beginThreadUrl :: String
@@ -36,7 +37,8 @@ templateString :: String
 templateString =
   String.joinWith
     "\n"
-    [ "- [mockmock.dev #{{mockmockDevNo}}]({{mockmockDevUrl}})"
+    [ "- {{yearWeek}}"
+    , "  - [mockmock.dev #{{mockmockDevNo}}]({{mockmockDevUrl}})"
     , "  - {{note}}"
     , "  - [やること宣言]({{beginThreadUrl}})"
     , "  - [やったこと成果発表]({{endThreadUrl}})"
@@ -60,6 +62,7 @@ toObject h =
       , Tuple "beginThreadUrl" h.beginThreadUrl
       , Tuple "endThreadUrl" h.endThreadUrl
       , Tuple "repositoryFullName" h.repositoryFullName
+      , Tuple "yearWeek" h.yearWeek
       ] <>
       (Maybe.maybe
         mempty
