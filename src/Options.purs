@@ -7,8 +7,8 @@ module Options
 import Bouzuya.CommandLineOption (OptionDefinition)
 import Bouzuya.CommandLineOption as CommandLineOption
 import Data.Either as Either
-import Data.Foldable as Foldable
 import Data.Maybe (Maybe(..))
+import Data.String as String
 import Prelude (map)
 
 type Options =
@@ -21,7 +21,7 @@ defs =
 
 help :: String
 help =
-  Foldable.intercalate
+  String.joinWith
     "\n"
     [ "Usage: w010-history"
     , ""

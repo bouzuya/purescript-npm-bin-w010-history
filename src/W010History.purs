@@ -27,14 +27,14 @@ type W010History =
   }
 
 format :: Array W010History -> String
-format histories = Array.intercalate "\n" (map toString histories)
+format histories = String.joinWith "\n" (map toString histories)
 
 parse :: String -> Maybe (Array W010History)
 parse = SimpleJSON.readJSON_
 
 templateString :: String
 templateString =
-  Array.intercalate
+  String.joinWith
     "\n"
     [ "- [mockmock.dev #{{mockmockDevNo}}]({{mockmockDevUrl}})"
     , "  - {{note}}"
